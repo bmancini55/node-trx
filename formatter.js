@@ -1,0 +1,116 @@
+
+var builder = require('xmlbuilder');
+
+/**
+ * Formats a `TestRun` into xml
+ * 
+ * @param {TestRun} testRun - the `TestRun` instance to format
+ * @return {string} xml
+ */
+exports.testRun = function (testRun) {
+  var xml = builder.create('TestRun')
+    , el;
+  
+  xml.att('xmlns','http://microsoft.com/schemas/VisualStudio/TeamTest/2010');
+  xml.att('id', testRun.id);
+  xml.att('name', testRun.name);
+
+  if (testRun.runUser) {
+    xml.att('runUser', testRun.runUser);
+  }
+
+  el = xml.ele('ResultSummary')
+    .att('outcome', testRun.counters.failed > 0 ? 'Failed' : 'Completed')
+    .ele('Counters')
+      .att('total', testRun.counters.total)
+      .att('executed', testRun.counters.executed)
+      .att('passed', testRun.counters.passed)
+      .att('error', testRun.counters.error)
+      .att('failed', testRun.counters.failed)
+      .att('timeout', testRun.counters.timeout)
+      .att('aborted', testRun.counters.aborted)
+      .att('inconclusive', testRun.counters.inconclusive)
+      .att('passedButRunAborted', testRun.counters.passedButRunAborted)
+      .att('notRunnable', testRun.counters.notRunnable)
+      .att('notExecuted', testRun.counters.notExecuted)
+      .att('disconnected', testRun.counters.disconnected)
+      .att('warning', testRun.counters.warning)
+      .att('completed', testRun.counters.completed)
+      .att('inProgress', testRun.counters.inProgress)
+      .att('pending', testRun.counters.pending);
+
+  el = xml.ele('TestDefinitions');
+  buildArray(testRun.testDefinitions, el, buildTestDefinition);
+
+  el = xml.ele('TestLists');
+  buildArray(testRun.testLists, el, buildTestList);
+
+  el = xml.ele('TestEntries');
+  buildArray(testRun.testEntries, el, buildTestEntry);
+
+  el = xml.ele('Results');
+  buildArray(testRun.testResults, el, buildTestResult);
+  
+  return xml.end({ pretty: true });
+}
+
+function buildArray(items, element, builder) {
+  items.forEach(function(item) {
+    builder(element, item);
+  });
+}
+
+function buildTestDefinition(parent, testDefinition) {
+  xml = parent.ele('UnitTest')
+    .att('id', testDefinition.id)
+    .att('name', testDefinition.name);  
+
+  xml.ele('Execution', { id: testDefinition.executionId }, null);  
+  xml.ele('TestMethod')
+    .att('codeBase', testDefinition.methodCodeBase)
+    .att('className', testDefinition.methodClassName)
+    .att('name', testDefinition.methodName)
+}
+
+function buildTestList(parent, testList) {
+  var xml = parent.ele('TestList')
+    .att('id', testList.id)
+    .att('name',  testList.name);
+}
+
+function buildTestEntry(parent, testEntry) {
+  var xml = parent.ele('TestEntry')
+    .att('testId', testEntry.testId)
+    .att('executionId', testEntry.executionId)
+    .att('testListId', testEntry.testListId);
+}
+
+function buildTestResult(parent, result) {
+  var xml = parent.ele('UnitTestResult')
+    .att('testId', result.testId)
+    .att('testName', result.testName)
+    .att('testType', result.testType)
+    .att('testListId', result.testListId)
+    .att('computerName', result.computerName);
+
+  if(result.outcome) {
+    xml.att('outcome', result.outcome);
+  }
+
+  if(result.startTime) {
+    xml.att('startTime', result.startTime);
+  }
+
+  if(result.endTime) {
+    xml.att('endTime', result.endTime);
+  }
+
+  if(result.duration) {
+    xml.att('duration', result.duration);
+  }
+
+  if(result.executionId) {
+    xml.att('executionId', result.executionId);
+  }
+}
+
