@@ -7,9 +7,9 @@ var fs = require('fs')
 
 
 run = new TestRun({ 
-  name: 'Sample TRX Import',
-  runUser: 'Brian Mancini'
-})
+    name: 'Sample TRX Import',
+    runUser: 'Brian Mancini'
+  })
   .addResult({ 
     test: new UnitTest({ name: 'test 1', methodName: 'test1', methodCodeBase: 'codebase', methodClassName: 'classname' }),
     computerName: computerName,
