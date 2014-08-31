@@ -1,13 +1,13 @@
 node-trx
 ========
 
-This is a Node utility for generating test results file in the TRX format.  This format is compliant with the namespace http://microsoft.com/schemas/VisualStudio/TeamTest/2010 which can be found in full spec in %VSINSTALLDIR%\xml\Schemas\vstst.xsd. 
+This is a Node utility for generating test results file in the TRX format.  This format is compliant with the namespace http://microsoft.com/schemas/VisualStudio/TeamTest/2010, found in full spec in %VSINSTALLDIR%\xml\Schemas\vstst.xsd. 
 
-At present, this libary is a partial implementation of the XSD designed for integration into Visual Studio.
+This libary is a partial implementation of the XSD.
 
-This library was designed to reduce domain knowledge needed to create TRX files via a simple, fluent interface. The following code is the simple.js example and demonstrates the simplicity of the library.
+This library was designed to reduce domain knowledge needed to create TRX files via a simple, fluent interface.
 
-```
+```javascript
 var fs = require('fs')
   , TRX = require('../trx')
   , TestRun = TRX.TestRun
