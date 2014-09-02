@@ -1,11 +1,13 @@
 {
   "name": "node-trx",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "File generator utility for TRX file format for use with Visual Studio and MSBuild",
   "keywords": [
     "trx",
-    "visual studio"
+    "visual studio",
+    "test report"
   ],
+  "main": "trx.js",
   "author": "Brian Mancini <bmancini@gmail.com>",
   "license": "MIT",
   "repository": "https://github.com/bmancini55/node-trx.git",
