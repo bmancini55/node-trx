@@ -57,7 +57,10 @@ TestRun.prototype.addResult = function(params) {
     , outcome = params.outcome
     , startTime = params.startTime
     , endTime = params.endTime
-    , duration = params.duration;
+    , duration = params.duration
+    , output = params.output
+    , errorMessage = params.errorMessage
+    , errorStacktrace = params.errorStacktrace;
 
   // add test definition
   test.executionId = executionId;
@@ -81,7 +84,10 @@ TestRun.prototype.addResult = function(params) {
     outcome: outcome, 
     startTime: startTime,
     endTime: endTime, 
-    duration: duration
+    duration: duration,
+    output: output,
+    errorMessage: errorMessage,
+    errorStacktrace: errorStacktrace
   });
   testResult.executionId = executionId;
   this.testResults.push(testResult);
@@ -215,6 +221,9 @@ function UnitTestResult(params) {
     this.endTime = params.endTime;
     this.duration = params.duration;
     this.executionId = params.executionId;
+    this.output = params.output;
+    this.errorMessage = params.errorMessage;
+    this.errorStacktrace = params.errorStacktrace;
 }
 
 

@@ -112,5 +112,16 @@ function buildTestResult(parent, result) {
   if(result.executionId) {
     xml.att('executionId', result.executionId);
   }
+
+  if(result.output || result.errorMessage || result.errorStacktrace) {
+    var output = xml.ele('Output');    
+    output.ele('StdOut', result.output || '');
+
+    if(result.errorMessage || result.errorStacktrace) {
+      var error = output.ele('ErrorInfo');
+      error.ele('Message', result.errorMessage || '');
+      error.ele('StackTrace', result.errorStacktrace || '');
+    }
+  }
 }
 
