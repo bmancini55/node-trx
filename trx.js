@@ -191,6 +191,7 @@ function UnitTest(params) {
   this.methodName = params.methodName;
   this.methodCodeBase = params.methodCodeBase;
   this.methodClassName = params.methodClassName;
+  this.description = params.description;  
 }
 
 

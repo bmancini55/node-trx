@@ -5,14 +5,17 @@
   </ResultSummary>
   <TestDefinitions>
     <UnitTest id="89f81c68-a210-4e28-90ed-32d6f10d23f8" name="test 1">
+      <Description>This is test 1</Description>
       <Execution id="d8d6b688-c5e2-44c4-9c5c-a189875bd610"/>
       <TestMethod codeBase="testing-framework" className="test1" name="test1"/>
     </UnitTest>
     <UnitTest id="9ce212d1-e8c7-45d0-934f-e95d04c14dcb" name="test 2">
+      <Description>This is test 2</Description>
       <Execution id="71d40c44-01da-4b35-9f21-bf1cfff97e40"/>
       <TestMethod codeBase="testing-framework" className="test2" name="test2"/>
     </UnitTest>
     <UnitTest id="e458c13d-bf3d-44b3-9177-495d16ef73b8" name="test 3">
+      <Description>This is test 3</Description>
       <Execution id="9d9b5fdc-f1fe-465b-bca6-49d50eeaf574"/>
       <TestMethod codeBase="testing-framework" className="test3" name="test3"/>
     </UnitTest>

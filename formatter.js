@@ -65,6 +65,10 @@ function buildTestDefinition(parent, testDefinition) {
     .att('id', testDefinition.id)
     .att('name', testDefinition.name);  
 
+  if(testDefinition.description) {
+    xml.ele('Description', testDefinition.description);
+  }
+
   xml.ele('Execution', { id: testDefinition.executionId }, null);  
   xml.ele('TestMethod')
     .att('codeBase', testDefinition.methodCodeBase)

@@ -23,7 +23,8 @@ describe('formatter', function () {
             name: 'test 1', 
             methodName: 'test1', 
             methodCodeBase: 'testing-framework', 
-            methodClassName: 'test1'
+            methodClassName: 'test1',
+            description: 'This is test 1'
           }),
           computerName: 'bmanci01',
           outcome: 'Passed',
@@ -38,7 +39,8 @@ describe('formatter', function () {
             name: 'test 2', 
             methodName: 'test2', 
             methodCodeBase: 'testing-framework', 
-            methodClassName: 'test2'
+            methodClassName: 'test2',
+            description: 'This is test 2'
           }),
           computerName: 'bmanci01',
           outcome: 'Inconclusive',
@@ -53,7 +55,8 @@ describe('formatter', function () {
             name: 'test 3', 
             methodName: 'test3', 
             methodCodeBase: 'testing-framework', 
-            methodClassName: 'test3' 
+            methodClassName: 'test3',
+            description: 'This is test 3'
           }),
           computerName: 'bmanci01',
           outcome: 'Failed',
@@ -65,8 +68,7 @@ describe('formatter', function () {
           errorStacktrace: 'at test3() in c:\\tests\\test3.js:line 1'
         });
 
-      actual = formatter.testRun(run);
-      fs.writeFileSync('test/derp.trx', actual);
+      actual = formatter.testRun(run);      
       expected = fs.readFileSync('test/test.trx', 'ascii')
 
       assert.equal(expected, actual);

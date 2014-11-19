@@ -11,7 +11,13 @@ run = new TestRun({
     runUser: 'Brian Mancini'
   })
   .addResult({ 
-    test: new UnitTest({ name: 'test 1', methodName: 'test1', methodCodeBase: 'codebase', methodClassName: 'classname' }),
+    test: new UnitTest({ 
+      name: 'test 1', 
+      methodName: 'test1', 
+      methodCodeBase: 'testing-framework', 
+      methodClassName: 'test1', 
+      description: 'This is test 1' 
+    }),
     computerName: computerName,
     outcome: 'Passed',
     duration: '00:00:44.7811567',
@@ -19,7 +25,13 @@ run = new TestRun({
     endTime: '2010-11-16T08:49:16.9694381-08:00'
   })
   .addResult({
-    test: new UnitTest({ name: 'test 2', methodName: 'test2', methodCodeBase: 'codebase', methodClassName: 'classname' }),
+    test: new UnitTest({ 
+      name: 'test 2', 
+      methodName: 'test2', 
+      methodCodeBase: 'testing-framework', 
+      methodClassName: 'test2', 
+      description: 'This is test 2'
+    }),
     computerName: computerName,
     outcome: 'Inconclusive',
     duration: '00:00:44.7811567',
@@ -27,12 +39,21 @@ run = new TestRun({
     endTime: '2010-11-16T08:49:16.9694381-08:00'
   })
   .addResult({
-    test: new UnitTest({ name: 'test 3', methodName: 'test3', methodCodeBase: 'codebase', methodClassName: 'classname' }),
+    test: new UnitTest({ 
+      name: 'test 3', 
+      methodName: 'test3', 
+      methodCodeBase: 'testing-framework', 
+      methodClassName: 'test3',
+      description: 'This is test 3'
+    }),
     computerName: computerName,
     outcome: 'Failed',
     duration: '00:00:44.7811567',
     startTime: '2010-11-16T08:48:29.9072393-08:00',
-    endTime: '2010-11-16T08:49:16.9694381-08:00'
+    endTime: '2010-11-16T08:49:16.9694381-08:00',
+    output: 'This is sample output for the unit test',
+    errorMessage: 'This unit test failed for a bad reason',
+    errorStacktrace: 'at test3() in c:\\tests\\test3.js:line 1'
   });
 
 

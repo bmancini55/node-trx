@@ -21,7 +21,13 @@ run = new TestRun({
     runUser: 'Brian Mancini'
   })
   .addResult({ 
-    test: new UnitTest({ name: 'test 1', methodName: 'test1', methodCodeBase: 'testing-framework', methodClassName: 'test1' }),
+    test: new UnitTest({ 
+      name: 'test 1', 
+      methodName: 'test1', 
+      methodCodeBase: 'testing-framework', 
+      methodClassName: 'test1', 
+      description: 'This is test 1' 
+    }),
     computerName: computerName,
     outcome: 'Passed',
     duration: '00:00:44.7811567',
@@ -29,7 +35,13 @@ run = new TestRun({
     endTime: '2010-11-16T08:49:16.9694381-08:00'
   })
   .addResult({
-    test: new UnitTest({ name: 'test 2', methodName: 'test2', methodCodeBase: 'testing-framework', methodClassName: 'test2' }),
+    test: new UnitTest({ 
+      name: 'test 2', 
+      methodName: 'test2', 
+      methodCodeBase: 'testing-framework', 
+      methodClassName: 'test2', 
+      description: 'This is test 2'
+    }),
     computerName: computerName,
     outcome: 'Inconclusive',
     duration: '00:00:44.7811567',
@@ -37,7 +49,13 @@ run = new TestRun({
     endTime: '2010-11-16T08:49:16.9694381-08:00'
   })
   .addResult({
-    test: new UnitTest({ name: 'test 3', methodName: 'test3', methodCodeBase: 'testing-framework', methodClassName: 'test3' }),
+    test: new UnitTest({ 
+      name: 'test 3', 
+      methodName: 'test3', 
+      methodCodeBase: 'testing-framework', 
+      methodClassName: 'test3',
+      description: 'This is test 3'
+    }),
     computerName: computerName,
     outcome: 'Failed',
     duration: '00:00:44.7811567',
@@ -60,3 +78,8 @@ fs.writeFileSync('example.trx', run.toXml());
 Error information can be provided by including `errorMessage` and `errorStacktrace` properties in the result. Stacktrace must conform to the syntax `at [method signature] in [file path]:[line number]` or it will be picked up by Visual Studio.
 
 Standard output information can be included in the `output` property.
+
+### Releases
+0.2.0 - Added support for Unit Test description
+0.1.2 - Added support for errors and stacktrace info
+0.1.1 - Initial development release
