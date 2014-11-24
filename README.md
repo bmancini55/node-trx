@@ -80,6 +80,10 @@ Error information can be provided by including `errorMessage` and `errorStacktra
 Standard output information can be included in the `output` property.
 
 ### Releases
+0.3.0 - Added support for configuring TestSetting and provides a default if not supplied.
+
 0.2.0 - Added support for Unit Test description
+
 0.1.2 - Added support for errors and stacktrace info
+
 0.1.1 - Initial development release
