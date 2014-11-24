@@ -16,6 +16,15 @@ function TestRun(params) {
   if(params.runUser) {
     this.runUser = params.runUser;
   }
+
+  if(params.testSettings) {
+    this.testSettings = new TestSettings(params.testSettings);
+  } else {
+    this.testSettings = new TestSettings({ 
+      id: 'ce1a4cfb-64fa-4d63-8815-e9984737a62c',
+      name: 'Default Test Settings'
+    });
+  }  
   
   this.testDefinitions = [];
   this.testLists = [
@@ -146,6 +155,19 @@ Counter.prototype.increment = function(outcome) {
   }
 }
 
+
+
+/**
+ * A TestSetting as defined by the XSD type `TestSettingsType`
+ *
+ * @param {object} params
+ * @config {string} name - name of the test settings
+ * @config {string} id - guid identifier
+ */
+function TestSettings(params) {
+  this.id = params.id;
+  this.name = params.name;
+}
 
 
 
