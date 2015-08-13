@@ -31,6 +31,7 @@ exports.testRun = function (testRun) {
         .att('name', testRun.testSettings.name)
         .att('id', testRun.testSettings.id);
 
+    // TODO: add Output > StdOut tags in result summary
     el = xml.ele('ResultSummary')
         .att('outcome', testRun.counters.failed > 0 ? 'Failed' : 'Completed')
         .ele('Counters')

@@ -18,7 +18,13 @@ var fs = require('fs')
 
 run = new TestRun({ 
     name: 'Sample TRX Import',
-    runUser: 'Brian Mancini'
+    runUser: 'Brian Mancini',
+    times: {
+        creation: '2015-08-10T00:00:00.000Z',
+        queuing: '2015-08-10T00:00:00.000Z',
+        start: '2015-08-10T00:00:00.000Z',
+        finish: '2015-08-10T00:00:01.500Z'
+    }
   })
   .addResult({ 
     test: new UnitTest({ 
