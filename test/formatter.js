@@ -14,7 +14,13 @@ describe('formatter', function () {
       run = new TestRun({ 
           id: 'da21858f-2c78-442a-8ea6-51fe73762e0e',
           name: 'Sample TRX Import',
-          runUser: 'Brian Mancini'
+          runUser: 'Brian Mancini',
+          times: {
+            creation: (new Date('2015-08-10T00:00:00.000Z')).toISOString(),
+            queuing: (new Date('2015-08-10T00:00:00.000Z')).toISOString(),
+            start: (new Date('2015-08-10T00:00:00.000Z')).toISOString(),
+            finish: (new Date('2015-08-10T00:00:01.500Z')).toISOString()
+          }
         })
         .addResult({ 
           executionId: 'd8d6b688-c5e2-44c4-9c5c-a189875bd610',
@@ -68,8 +74,8 @@ describe('formatter', function () {
           errorStacktrace: 'at test3() in c:\\tests\\test3.js:line 1'
         });
 
-      actual = formatter.testRun(run);      
-      expected = fs.readFileSync('test/test.trx', 'ascii')
+      actual = formatter.testRun(run);
+      expected = fs.readFileSync('test/test.trx', 'ascii');
 
       assert.equal(expected, actual);
     });

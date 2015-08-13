@@ -19,6 +19,15 @@ exports.testRun = function (testRun) {
     xml.att('runUser', testRun.runUser);
   }
 
+  if (testRun.times) {
+    el = xml.ele('Times')
+        .att('creation', testRun.times.creation)
+        .att('queuing', testRun.times.queuing)
+        .att('start', testRun.times.start)
+        .att('finish', testRun.times.finish);
+  }
+
+
   el = xml.ele('TestSettings')
     .att('name', testRun.testSettings.name)
     .att('id', testRun.testSettings.id);

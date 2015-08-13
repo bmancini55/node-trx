@@ -17,6 +17,10 @@ function TestRun(params) {
     this.runUser = params.runUser;
   }
 
+  if(params.times) {
+    this.times = new Times(params.times);
+  }
+
   if(params.testSettings) {
     this.testSettings = new TestSettings(params.testSettings);
   } else {
@@ -155,7 +159,21 @@ Counter.prototype.increment = function(outcome) {
   }
 }
 
-
+/**
+ * A Times as defined by the XSD type `Times`
+ *
+ * @param {object} params
+ * @config creation
+ * @config queuing
+ * @config start
+ * @config finish
+ */
+function Times(params) {
+  this.creation = params.creation;
+  this.queuing = params.queuing;
+  this.start = params.start;
+  this.finish = params.finish;
+}
 
 /**
  * A TestSetting as defined by the XSD type `TestSettingsType`
@@ -168,6 +186,7 @@ function TestSettings(params) {
   this.id = params.id;
   this.name = params.name;
 }
+
 
 
 
