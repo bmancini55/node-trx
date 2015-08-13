@@ -86,6 +86,8 @@ Error information can be provided by including `errorMessage` and `errorStacktra
 Standard output information can be included in the `output` property.
 
 ### Releases
+0.4.0 - Added support for configuring Times tag.
+
 0.3.0 - Added support for configuring TestSetting and provides a default if not supplied.
 
 0.2.0 - Added support for Unit Test description
