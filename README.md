@@ -18,7 +18,13 @@ var fs = require('fs')
 
 run = new TestRun({ 
     name: 'Sample TRX Import',
-    runUser: 'Brian Mancini'
+    runUser: 'Brian Mancini',
+    times: {
+        creation: '2015-08-10T00:00:00.000Z',
+        queuing: '2015-08-10T00:00:00.000Z',
+        start: '2015-08-10T00:00:00.000Z',
+        finish: '2015-08-10T00:00:01.500Z'
+    }
   })
   .addResult({ 
     test: new UnitTest({ 
@@ -80,6 +86,8 @@ Error information can be provided by including `errorMessage` and `errorStacktra
 Standard output information can be included in the `output` property.
 
 ### Releases
+0.4.0 - Added support for configuring Times tag.
+
 0.3.0 - Added support for configuring TestSetting and provides a default if not supplied.
 
 0.2.0 - Added support for Unit Test description

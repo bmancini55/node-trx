@@ -6,17 +6,23 @@ var fs = require('fs')
   , run;
 
 
-run = new TestRun({ 
-    name: 'Sample TRX Import',
-    runUser: 'Brian Mancini'
-  })
-  .addResult({ 
-    test: new UnitTest({ 
-      name: 'test 1', 
-      methodName: 'test1', 
-      methodCodeBase: 'testing-framework', 
-      methodClassName: 'test1', 
-      description: 'This is test 1' 
+run = new TestRun({
+  name: 'Sample TRX Import',
+  runUser: 'Brian Mancini',
+  times: {
+    creation: '2015-08-10T00:00:00.000Z',
+    queuing: '2015-08-10T00:00:00.000Z',
+    start: '2015-08-10T00:00:00.000Z',
+    finish: '2015-08-10T00:00:01.500Z'
+  }
+})
+  .addResult({
+    test: new UnitTest({
+      name: 'test 1',
+      methodName: 'test1',
+      methodCodeBase: 'testing-framework',
+      methodClassName: 'test1',
+      description: 'This is test 1'
     }),
     computerName: computerName,
     outcome: 'Passed',
@@ -25,11 +31,11 @@ run = new TestRun({
     endTime: '2010-11-16T08:49:16.9694381-08:00'
   })
   .addResult({
-    test: new UnitTest({ 
-      name: 'test 2', 
-      methodName: 'test2', 
-      methodCodeBase: 'testing-framework', 
-      methodClassName: 'test2', 
+    test: new UnitTest({
+      name: 'test 2',
+      methodName: 'test2',
+      methodCodeBase: 'testing-framework',
+      methodClassName: 'test2',
       description: 'This is test 2'
     }),
     computerName: computerName,
@@ -39,10 +45,10 @@ run = new TestRun({
     endTime: '2010-11-16T08:49:16.9694381-08:00'
   })
   .addResult({
-    test: new UnitTest({ 
-      name: 'test 3', 
-      methodName: 'test3', 
-      methodCodeBase: 'testing-framework', 
+    test: new UnitTest({
+      name: 'test 3',
+      methodName: 'test3',
+      methodCodeBase: 'testing-framework',
       methodClassName: 'test3',
       description: 'This is test 3'
     }),

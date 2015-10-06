@@ -1,6 +1,6 @@
 {
   "name": "node-trx",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "File generator utility for TRX file format for use with Visual Studio and MSBuild",
   "keywords": [
     "trx",
