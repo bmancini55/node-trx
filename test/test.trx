@@ -3,7 +3,7 @@
   <Times creation="2015-08-10T00:00:00.000Z" queuing="2015-08-10T00:00:00.000Z" start="2015-08-10T00:00:00.000Z" finish="2015-08-10T00:00:01.500Z"/>
   <TestSettings name="Default Test Settings" id="ce1a4cfb-64fa-4d63-8815-e9984737a62c"/>
   <ResultSummary outcome="Failed">
-    <Counters total="3" executed="3" passed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="1" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0"/>
+    <Counters total="5" executed="4" passed="1" error="0" failed="1" timeout="1" aborted="0" inconclusive="1" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="1"/>
   </ResultSummary>
   <TestDefinitions>
     <UnitTest id="89f81c68-a210-4e28-90ed-32d6f10d23f8" name="test 1">
@@ -21,6 +21,16 @@
       <Execution id="9d9b5fdc-f1fe-465b-bca6-49d50eeaf574"/>
       <TestMethod codeBase="testing-framework" className="test3" name="test3"/>
     </UnitTest>
+    <UnitTest id="3a9b1c2b-db55-49df-bbc4-2a03b052c981" name="test 4">
+      <Description>This is test 4</Description>
+      <Execution id="a2c2aa1f-6ac5-4505-b441-b5927a925a87"/>
+      <TestMethod codeBase="testing-framework" className="test4" name="test4"/>
+    </UnitTest>
+    <UnitTest id="1c5288a9-26f1-4c44-913a-32024c99415e" name="test 5">
+      <Description>This is test 5</Description>
+      <Execution id="6b8ddc5a-3a36-4d07-8e77-d2f5e1d3f14c"/>
+      <TestMethod codeBase="testing-framework" className="test5" name="test5"/>
+    </UnitTest>
   </TestDefinitions>
   <TestLists>
     <TestList id="8c84fa94-04c1-424b-9868-57a2d4851a1d" name="Results Not in a List"/>
@@ -30,6 +40,8 @@
     <TestEntry testId="89f81c68-a210-4e28-90ed-32d6f10d23f8" executionId="d8d6b688-c5e2-44c4-9c5c-a189875bd610" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
     <TestEntry testId="9ce212d1-e8c7-45d0-934f-e95d04c14dcb" executionId="71d40c44-01da-4b35-9f21-bf1cfff97e40" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
     <TestEntry testId="e458c13d-bf3d-44b3-9177-495d16ef73b8" executionId="9d9b5fdc-f1fe-465b-bca6-49d50eeaf574" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
+    <TestEntry testId="3a9b1c2b-db55-49df-bbc4-2a03b052c981" executionId="a2c2aa1f-6ac5-4505-b441-b5927a925a87" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
+    <TestEntry testId="1c5288a9-26f1-4c44-913a-32024c99415e" executionId="6b8ddc5a-3a36-4d07-8e77-d2f5e1d3f14c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
   </TestEntries>
   <Results>
     <UnitTestResult testId="89f81c68-a210-4e28-90ed-32d6f10d23f8" testName="test 1" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="bmanci01" outcome="Passed" startTime="2010-11-16T08:48:29.9072393-08:00" endTime="2010-11-16T08:49:16.9694381-08:00" duration="00:00:44.7811567" executionId="d8d6b688-c5e2-44c4-9c5c-a189875bd610"/>
@@ -43,5 +55,15 @@
         </ErrorInfo>
       </Output>
     </UnitTestResult>
+    <UnitTestResult testId="3a9b1c2b-db55-49df-bbc4-2a03b052c981" testName="test 4" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="bmanci01" outcome="Timeout" startTime="2010-11-16T08:48:29.9072393-08:00" endTime="2010-11-16T08:49:16.9694381-08:00" duration="00:00:44.7811567" executionId="a2c2aa1f-6ac5-4505-b441-b5927a925a87">
+      <Output>
+        <StdOut>This is sample output for the unit test</StdOut>
+        <ErrorInfo>
+          <Message>This unit test failed because it timed out</Message>
+          <StackTrace>at test4() in c:\tests\test4.js:line 1</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult testId="1c5288a9-26f1-4c44-913a-32024c99415e" testName="test 5" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="bmanci01" outcome="Pending" startTime="2010-11-16T08:48:29.9072393-08:00" endTime="2010-11-16T08:48:29.9072393-08:00" duration="00:00:00.000" executionId="6b8ddc5a-3a36-4d07-8e77-d2f5e1d3f14c"/>
   </Results>
 </TestRun>
