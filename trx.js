@@ -113,7 +113,7 @@ TestRun.prototype.addResult = function (params) {
 
 
 /**
- * Counter is defined bye the XSD
+ * Counter is defined by the XSD
  */
 function Counter() {
   this.total = 0;
@@ -137,21 +137,30 @@ function Counter() {
 /**
  * Increments the counter object values based on the outcome
  *
- * @param {string} outcome - outcome 'Passed', 'Failed', 'Inconclusive'
+ * @param {string} outcome - outcome 'Passed', 'Failed', 'Inconclusive', 'Timeout', 'Pending'
  */
 Counter.prototype.increment = function (outcome) {
   this.total += 1;
-  this.executed += 1;
 
   switch (outcome) {
     case 'Passed':
+      this.executed += 1;
       this.passed += 1;
       break;
     case 'Failed':
+      this.executed += 1;
       this.failed += 1;
       break;
     case 'Inconclusive':
+      this.executed += 1;
       this.inconclusive += 1;
+      break;
+    case 'Timeout':
+      this.executed += 1;
+      this.timeout += 1;
+      break;
+    case 'Pending':
+      this.pending += 1;
       break;
   }
 }

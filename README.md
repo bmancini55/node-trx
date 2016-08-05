@@ -1,7 +1,9 @@
 node-trx
 ========
 
-This is a Node utility for generating test results file in the TRX format.  This format is compliant with the namespace http://microsoft.com/schemas/VisualStudio/TeamTest/2010, found in full spec in %VSINSTALLDIR%\xml\Schemas\vstst.xsd. 
+This is a Node utility for generating test results files in the [Visual Studio Test Results File (TRX)](https://msdn.microsoft.com/en-us/library/jj155800(v=vs.120).aspx) format.
+
+The TRX file format is compliant with the namespace http://microsoft.com/schemas/VisualStudio/TeamTest/2010, found in full spec in `%VSINSTALLDIR%\xml\Schemas\vstst.xsd`. 
 
 This libary is a partial implementation of the XSD.
 
@@ -80,12 +82,18 @@ console.log(run);
 fs.writeFileSync('example.trx', run.toXml());
 ```
 
-
 Error information can be provided by including `errorMessage` and `errorStacktrace` properties in the result. Stacktrace must conform to the syntax `at [method signature] in [file path]:[line number]` or it will be picked up by Visual Studio.
 
 Standard output information can be included in the `output` property.
 
+### Unit tests
+
+Run `npm run test`.
+
 ### Releases
+
+0.5.0 - Added support for Pending and Timeout outcomes.
+
 0.4.0 - Added support for configuring Times tag.
 
 0.3.0 - Added support for configuring TestSetting and provides a default if not supplied.

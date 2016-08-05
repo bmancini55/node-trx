@@ -72,6 +72,41 @@ describe('formatter', function () {
           output: 'This is sample output for the unit test',
           errorMessage: 'This unit test failed for a bad reason',
           errorStacktrace: 'at test3() in c:\\tests\\test3.js:line 1'
+        })
+        .addResult({
+          executionId: 'a2c2aa1f-6ac5-4505-b441-b5927a925a87',
+          test: new UnitTest({
+            id: '3a9b1c2b-db55-49df-bbc4-2a03b052c981',
+            name: 'test 4',
+            methodName: 'test4',
+            methodCodeBase: 'testing-framework',
+            methodClassName: 'test4',
+            description: 'This is test 4'
+          }),
+          computerName: 'bmanci01',
+          outcome: 'Timeout',
+          duration: '00:00:44.7811567',
+          startTime: '2010-11-16T08:48:29.9072393-08:00',
+          endTime: '2010-11-16T08:49:16.9694381-08:00',
+          output: 'This is sample output for the unit test',
+          errorMessage: 'This unit test failed because it timed out',
+          errorStacktrace: 'at test4() in c:\\tests\\test4.js:line 1'
+        })
+        .addResult({
+          executionId: '6b8ddc5a-3a36-4d07-8e77-d2f5e1d3f14c',
+          test: new UnitTest({
+            id: '1c5288a9-26f1-4c44-913a-32024c99415e',
+            name: 'test 5',
+            methodName: 'test5',
+            methodCodeBase: 'testing-framework',
+            methodClassName: 'test5',
+            description: 'This is test 5'
+          }),
+          computerName: 'bmanci01',
+          outcome: 'Pending',
+          duration: '00:00:00.000',
+          startTime: '2010-11-16T08:48:29.9072393-08:00',
+          endTime: '2010-11-16T08:48:29.9072393-08:00'
         });
 
       actual = formatter.testRun(run);
