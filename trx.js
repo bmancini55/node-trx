@@ -137,7 +137,7 @@ function Counter() {
 /**
  * Increments the counter object values based on the outcome
  *
- * @param {string} outcome - outcome 'Passed', 'Failed', 'Inconclusive', 'Timeout', 'Pending'
+ * @param {string} outcome - outcome 'Passed', 'Failed', 'Inconclusive', 'Timeout', 'Pending', 'NotExecuted'
  */
 Counter.prototype.increment = function (outcome) {
   this.total += 1;
@@ -161,6 +161,9 @@ Counter.prototype.increment = function (outcome) {
       break;
     case 'Pending':
       this.pending += 1;
+      break;
+    case 'NotExecuted':
+      this.notExecuted += 1;
       break;
   }
 }

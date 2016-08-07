@@ -107,6 +107,22 @@ describe('formatter', function () {
           duration: '00:00:00.000',
           startTime: '2010-11-16T08:48:29.9072393-08:00',
           endTime: '2010-11-16T08:48:29.9072393-08:00'
+        })
+        .addResult({
+          executionId: 'f9cf5371-3b98-400c-a117-bc495eb50061',
+          test: new UnitTest({
+            id: '7466d1d9-76a2-4ec3-a9f9-4ff29f066230',
+            name: 'test 6',
+            methodName: 'test6',
+            methodCodeBase: 'testing-framework',
+            methodClassName: 'test6',
+            description: 'This is test 6'
+          }),
+          computerName: 'bmanci01',
+          outcome: 'NotExecuted',
+          duration: '00:00:00.000',
+          startTime: '2010-11-16T08:48:29.9072393-08:00',
+          endTime: '2010-11-16T08:48:29.9072393-08:00'
         });
 
       actual = formatter.testRun(run);
