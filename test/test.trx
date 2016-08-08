@@ -3,7 +3,7 @@
   <Times creation="2015-08-10T00:00:00.000Z" queuing="2015-08-10T00:00:00.000Z" start="2015-08-10T00:00:00.000Z" finish="2015-08-10T00:00:01.500Z"/>
   <TestSettings name="Default Test Settings" id="ce1a4cfb-64fa-4d63-8815-e9984737a62c"/>
   <ResultSummary outcome="Failed">
-    <Counters total="5" executed="4" passed="1" error="0" failed="1" timeout="1" aborted="0" inconclusive="1" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="1"/>
+    <Counters total="6" executed="4" passed="1" error="0" failed="1" timeout="1" aborted="0" inconclusive="1" passedButRunAborted="0" notRunnable="0" notExecuted="1" disconnected="0" warning="0" completed="0" inProgress="0" pending="1"/>
   </ResultSummary>
   <TestDefinitions>
     <UnitTest id="89f81c68-a210-4e28-90ed-32d6f10d23f8" name="test 1">
@@ -31,6 +31,11 @@
       <Execution id="6b8ddc5a-3a36-4d07-8e77-d2f5e1d3f14c"/>
       <TestMethod codeBase="testing-framework" className="test5" name="test5"/>
     </UnitTest>
+    <UnitTest id="7466d1d9-76a2-4ec3-a9f9-4ff29f066230" name="test 6">
+      <Description>This is test 6</Description>
+      <Execution id="f9cf5371-3b98-400c-a117-bc495eb50061"/>
+      <TestMethod codeBase="testing-framework" className="test6" name="test6"/>
+    </UnitTest>
   </TestDefinitions>
   <TestLists>
     <TestList id="8c84fa94-04c1-424b-9868-57a2d4851a1d" name="Results Not in a List"/>
@@ -42,6 +47,7 @@
     <TestEntry testId="e458c13d-bf3d-44b3-9177-495d16ef73b8" executionId="9d9b5fdc-f1fe-465b-bca6-49d50eeaf574" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
     <TestEntry testId="3a9b1c2b-db55-49df-bbc4-2a03b052c981" executionId="a2c2aa1f-6ac5-4505-b441-b5927a925a87" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
     <TestEntry testId="1c5288a9-26f1-4c44-913a-32024c99415e" executionId="6b8ddc5a-3a36-4d07-8e77-d2f5e1d3f14c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
+    <TestEntry testId="7466d1d9-76a2-4ec3-a9f9-4ff29f066230" executionId="f9cf5371-3b98-400c-a117-bc495eb50061" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
   </TestEntries>
   <Results>
     <UnitTestResult testId="89f81c68-a210-4e28-90ed-32d6f10d23f8" testName="test 1" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="bmanci01" outcome="Passed" startTime="2010-11-16T08:48:29.9072393-08:00" endTime="2010-11-16T08:49:16.9694381-08:00" duration="00:00:44.7811567" executionId="d8d6b688-c5e2-44c4-9c5c-a189875bd610"/>
@@ -65,5 +71,6 @@
       </Output>
     </UnitTestResult>
     <UnitTestResult testId="1c5288a9-26f1-4c44-913a-32024c99415e" testName="test 5" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="bmanci01" outcome="Pending" startTime="2010-11-16T08:48:29.9072393-08:00" endTime="2010-11-16T08:48:29.9072393-08:00" duration="00:00:00.000" executionId="6b8ddc5a-3a36-4d07-8e77-d2f5e1d3f14c"/>
+    <UnitTestResult testId="7466d1d9-76a2-4ec3-a9f9-4ff29f066230" testName="test 6" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="bmanci01" outcome="NotExecuted" startTime="2010-11-16T08:48:29.9072393-08:00" endTime="2010-11-16T08:48:29.9072393-08:00" duration="00:00:00.000" executionId="f9cf5371-3b98-400c-a117-bc495eb50061"/>
   </Results>
 </TestRun>
