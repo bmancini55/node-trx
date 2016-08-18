@@ -31,6 +31,10 @@ exports.testRun = function (testRun) {
     .att('name', testRun.testSettings.name)
     .att('id', testRun.testSettings.id);
 
+  if(testRun.testSettings.deployment !== null && testRun.testSettings.deployment !== undefined) {
+    buildDeployment(el, testRun.testSettings.deployment)
+  }
+
   // TODO: add Output > StdOut tags in result summary
   el = xml.ele('ResultSummary')
     .att('outcome', testRun.counters.failed > 0 ? 'Failed' : 'Completed')
@@ -71,6 +75,14 @@ function buildArray(items, element, builder) {
   items.forEach(function (item) {
     builder(element, item);
   });
+}
+
+function buildDeployment(parent, deploymentDefinition) {
+  var ele = parent.ele('Deployment');
+  
+  if(deploymentDefinition.runDeploymentRoot !== undefined) {
+    ele.att('runDeploymentRoot', deploymentDefinition.runDeploymentRoot);
+  }
 }
 
 function buildTestDefinition(parent, testDefinition) {
@@ -130,6 +142,14 @@ function buildTestResult(parent, result) {
     xml.att('executionId', result.executionId);
   }
 
+  if (result.relativeResultsDirectory) { 
+    xml.att('relativeResultsDirectory', result.relativeResultsDirectory);
+  }
+
+  if(result.resultFiles && result.resultFiles.length > 0) {
+	  buildArray(result.resultFiles, xml.ele('ResultFiles'), buildResultFileEntry);
+  }
+
   if (result.output || result.errorMessage || result.errorStacktrace) {
     var output = xml.ele('Output');
     output.ele('StdOut', result.output || '');
@@ -140,5 +160,9 @@ function buildTestResult(parent, result) {
       error.ele('StackTrace', result.errorStacktrace || '');
     }
   }
+}
+
+function buildResultFileEntry(parent, result) {
+  var xml = parent.ele('ResultFile').att('path', result.path);
 }
 

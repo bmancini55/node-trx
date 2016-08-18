@@ -20,6 +20,9 @@ describe('formatter', function () {
           queuing: (new Date('2015-08-10T00:00:00.000Z')).toISOString(),
           start: (new Date('2015-08-10T00:00:00.000Z')).toISOString(),
           finish: (new Date('2015-08-10T00:00:01.500Z')).toISOString()
+        },
+        deployment: {
+          runDeploymentRoot: 'test_files'
         }
       })
         .addResult({
@@ -71,7 +74,10 @@ describe('formatter', function () {
           endTime: '2010-11-16T08:49:16.9694381-08:00',
           output: 'This is sample output for the unit test',
           errorMessage: 'This unit test failed for a bad reason',
-          errorStacktrace: 'at test3() in c:\\tests\\test3.js:line 1'
+          errorStacktrace: 'at test3() in c:\\tests\\test3.js:line 1',
+          resultFiles: [ 
+            { path: 'screenshot.jpg' } 
+          ]
         })
         .addResult({
           executionId: 'a2c2aa1f-6ac5-4505-b441-b5927a925a87',
@@ -127,7 +133,7 @@ describe('formatter', function () {
 
       actual = formatter.testRun(run);
       expected = fs.readFileSync('test/test.trx', 'ascii');
-
+      
       assert.equal(expected, actual);
     });
   });

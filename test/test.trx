@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <TestRun xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" id="da21858f-2c78-442a-8ea6-51fe73762e0e" name="Sample TRX Import" runUser="Brian Mancini">
   <Times creation="2015-08-10T00:00:00.000Z" queuing="2015-08-10T00:00:00.000Z" start="2015-08-10T00:00:00.000Z" finish="2015-08-10T00:00:01.500Z"/>
-  <TestSettings name="Default Test Settings" id="ce1a4cfb-64fa-4d63-8815-e9984737a62c"/>
+  <TestSettings name="Default Test Settings" id="ce1a4cfb-64fa-4d63-8815-e9984737a62c">
+    <Deployment runDeploymentRoot="test_files"/>
+  </TestSettings>
   <ResultSummary outcome="Failed">
     <Counters total="6" executed="4" passed="1" error="0" failed="1" timeout="1" aborted="0" inconclusive="1" passedButRunAborted="0" notRunnable="0" notExecuted="1" disconnected="0" warning="0" completed="0" inProgress="0" pending="1"/>
   </ResultSummary>
@@ -50,9 +52,12 @@
     <TestEntry testId="7466d1d9-76a2-4ec3-a9f9-4ff29f066230" executionId="f9cf5371-3b98-400c-a117-bc495eb50061" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
   </TestEntries>
   <Results>
-    <UnitTestResult testId="89f81c68-a210-4e28-90ed-32d6f10d23f8" testName="test 1" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="bmanci01" outcome="Passed" startTime="2010-11-16T08:48:29.9072393-08:00" endTime="2010-11-16T08:49:16.9694381-08:00" duration="00:00:44.7811567" executionId="d8d6b688-c5e2-44c4-9c5c-a189875bd610"/>
-    <UnitTestResult testId="9ce212d1-e8c7-45d0-934f-e95d04c14dcb" testName="test 2" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="bmanci01" outcome="Inconclusive" startTime="2010-11-16T08:48:29.9072393-08:00" endTime="2010-11-16T08:49:16.9694381-08:00" duration="00:00:44.7811567" executionId="71d40c44-01da-4b35-9f21-bf1cfff97e40"/>
-    <UnitTestResult testId="e458c13d-bf3d-44b3-9177-495d16ef73b8" testName="test 3" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="bmanci01" outcome="Failed" startTime="2010-11-16T08:48:29.9072393-08:00" endTime="2010-11-16T08:49:16.9694381-08:00" duration="00:00:44.7811567" executionId="9d9b5fdc-f1fe-465b-bca6-49d50eeaf574">
+    <UnitTestResult testId="89f81c68-a210-4e28-90ed-32d6f10d23f8" testName="test 1" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="bmanci01" outcome="Passed" startTime="2010-11-16T08:48:29.9072393-08:00" endTime="2010-11-16T08:49:16.9694381-08:00" duration="00:00:44.7811567" executionId="d8d6b688-c5e2-44c4-9c5c-a189875bd610" relativeResultsDirectory="d8d6b688-c5e2-44c4-9c5c-a189875bd610"/>
+    <UnitTestResult testId="9ce212d1-e8c7-45d0-934f-e95d04c14dcb" testName="test 2" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="bmanci01" outcome="Inconclusive" startTime="2010-11-16T08:48:29.9072393-08:00" endTime="2010-11-16T08:49:16.9694381-08:00" duration="00:00:44.7811567" executionId="71d40c44-01da-4b35-9f21-bf1cfff97e40" relativeResultsDirectory="71d40c44-01da-4b35-9f21-bf1cfff97e40"/>
+    <UnitTestResult testId="e458c13d-bf3d-44b3-9177-495d16ef73b8" testName="test 3" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="bmanci01" outcome="Failed" startTime="2010-11-16T08:48:29.9072393-08:00" endTime="2010-11-16T08:49:16.9694381-08:00" duration="00:00:44.7811567" executionId="9d9b5fdc-f1fe-465b-bca6-49d50eeaf574" relativeResultsDirectory="9d9b5fdc-f1fe-465b-bca6-49d50eeaf574">
+      <ResultFiles>
+        <ResultFile path="screenshot.jpg"/>
+      </ResultFiles>
       <Output>
         <StdOut>This is sample output for the unit test</StdOut>
         <ErrorInfo>
@@ -61,7 +66,7 @@
         </ErrorInfo>
       </Output>
     </UnitTestResult>
-    <UnitTestResult testId="3a9b1c2b-db55-49df-bbc4-2a03b052c981" testName="test 4" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="bmanci01" outcome="Timeout" startTime="2010-11-16T08:48:29.9072393-08:00" endTime="2010-11-16T08:49:16.9694381-08:00" duration="00:00:44.7811567" executionId="a2c2aa1f-6ac5-4505-b441-b5927a925a87">
+    <UnitTestResult testId="3a9b1c2b-db55-49df-bbc4-2a03b052c981" testName="test 4" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="bmanci01" outcome="Timeout" startTime="2010-11-16T08:48:29.9072393-08:00" endTime="2010-11-16T08:49:16.9694381-08:00" duration="00:00:44.7811567" executionId="a2c2aa1f-6ac5-4505-b441-b5927a925a87" relativeResultsDirectory="a2c2aa1f-6ac5-4505-b441-b5927a925a87">
       <Output>
         <StdOut>This is sample output for the unit test</StdOut>
         <ErrorInfo>
@@ -70,7 +75,7 @@
         </ErrorInfo>
       </Output>
     </UnitTestResult>
-    <UnitTestResult testId="1c5288a9-26f1-4c44-913a-32024c99415e" testName="test 5" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="bmanci01" outcome="Pending" startTime="2010-11-16T08:48:29.9072393-08:00" endTime="2010-11-16T08:48:29.9072393-08:00" duration="00:00:00.000" executionId="6b8ddc5a-3a36-4d07-8e77-d2f5e1d3f14c"/>
-    <UnitTestResult testId="7466d1d9-76a2-4ec3-a9f9-4ff29f066230" testName="test 6" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="bmanci01" outcome="NotExecuted" startTime="2010-11-16T08:48:29.9072393-08:00" endTime="2010-11-16T08:48:29.9072393-08:00" duration="00:00:00.000" executionId="f9cf5371-3b98-400c-a117-bc495eb50061"/>
+    <UnitTestResult testId="1c5288a9-26f1-4c44-913a-32024c99415e" testName="test 5" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="bmanci01" outcome="Pending" startTime="2010-11-16T08:48:29.9072393-08:00" endTime="2010-11-16T08:48:29.9072393-08:00" duration="00:00:00.000" executionId="6b8ddc5a-3a36-4d07-8e77-d2f5e1d3f14c" relativeResultsDirectory="6b8ddc5a-3a36-4d07-8e77-d2f5e1d3f14c"/>
+    <UnitTestResult testId="7466d1d9-76a2-4ec3-a9f9-4ff29f066230" testName="test 6" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="bmanci01" outcome="NotExecuted" startTime="2010-11-16T08:48:29.9072393-08:00" endTime="2010-11-16T08:48:29.9072393-08:00" duration="00:00:00.000" executionId="f9cf5371-3b98-400c-a117-bc495eb50061" relativeResultsDirectory="f9cf5371-3b98-400c-a117-bc495eb50061"/>
   </Results>
 </TestRun>
