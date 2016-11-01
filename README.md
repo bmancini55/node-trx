@@ -3,11 +3,11 @@ node-trx
 
 This is a Node utility for generating test results files in the [Visual Studio Test Results File (TRX)](https://msdn.microsoft.com/en-us/library/jj155800(v=vs.120).aspx) format.
 
-The TRX file format is compliant with the namespace http://microsoft.com/schemas/VisualStudio/TeamTest/2010, found in full spec in `%VSINSTALLDIR%\xml\Schemas\vstst.xsd`. 
+The TRX file format is compliant with the namespace http://microsoft.com/schemas/VisualStudio/TeamTest/2010, found in full spec in `%VSINSTALLDIR%\xml\Schemas\vstst.xsd`.
 
 This libary is a partial implementation of the XSD.
 
-This library was designed to reduce domain knowledge needed to create TRX files via a simple, fluent interface. 
+This library was designed to reduce domain knowledge needed to create TRX files via a simple, fluent interface.
 
 ```javascript
 var fs = require('fs')
@@ -18,7 +18,7 @@ var fs = require('fs')
   , run;
 
 
-run = new TestRun({ 
+run = new TestRun({
     name: 'Sample TRX Import',
     runUser: 'Brian Mancini',
     times: {
@@ -28,13 +28,13 @@ run = new TestRun({
         finish: '2015-08-10T00:00:01.500Z'
     }
   })
-  .addResult({ 
-    test: new UnitTest({ 
-      name: 'test 1', 
-      methodName: 'test1', 
-      methodCodeBase: 'testing-framework', 
-      methodClassName: 'test1', 
-      description: 'This is test 1' 
+  .addResult({
+    test: new UnitTest({
+      name: 'test 1',
+      methodName: 'test1',
+      methodCodeBase: 'testing-framework',
+      methodClassName: 'test1',
+      description: 'This is test 1'
     }),
     computerName: computerName,
     outcome: 'Passed',
@@ -43,11 +43,11 @@ run = new TestRun({
     endTime: '2010-11-16T08:49:16.9694381-08:00'
   })
   .addResult({
-    test: new UnitTest({ 
-      name: 'test 2', 
-      methodName: 'test2', 
-      methodCodeBase: 'testing-framework', 
-      methodClassName: 'test2', 
+    test: new UnitTest({
+      name: 'test 2',
+      methodName: 'test2',
+      methodCodeBase: 'testing-framework',
+      methodClassName: 'test2',
       description: 'This is test 2'
     }),
     computerName: computerName,
@@ -57,10 +57,10 @@ run = new TestRun({
     endTime: '2010-11-16T08:49:16.9694381-08:00'
   })
   .addResult({
-    test: new UnitTest({ 
-      name: 'test 3', 
-      methodName: 'test3', 
-      methodCodeBase: 'testing-framework', 
+    test: new UnitTest({
+      name: 'test 3',
+      methodName: 'test3',
+      methodCodeBase: 'testing-framework',
       methodClassName: 'test3',
       description: 'This is test 3'
     }),
@@ -91,6 +91,8 @@ Standard output information can be included in the `output` property.
 Run `npm run test`.
 
 ### Releases
+
+0.7.0 - Added support for Attachments
 
 0.6.0 - Added support for NotExecuted outcome.
 

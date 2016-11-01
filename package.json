@@ -1,6 +1,6 @@
 {
   "name": "node-trx",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "File generator utility for TRX file format for use with Visual Studio and MSBuild",
   "keywords": [
     "trx",
@@ -12,11 +12,11 @@
   "license": "MIT",
   "repository": "https://github.com/bmancini55/node-trx.git",
   "dependencies": {
-    "xmlbuilder": "^2.4.3",
-    "node-uuid": "~1.4.1"
+    "node-uuid": "^1.4.7",
+    "xmlbuilder": "^2.6.5"
   },
   "devDependencies": {
-    "mocha": "^1.21.4"
+    "mocha": "^1.21.5"
   },
   "scripts": {
     "test": "mocha test/"
