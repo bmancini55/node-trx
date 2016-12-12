@@ -94,6 +94,11 @@ function buildTestDefinition(parent, testDefinition) {
     xml.ele('Description', testDefinition.description);
   }
 
+  if(testDefinition.owners) {
+    var owners = xml.ele('Owners');
+    buildArray(testDefinition.owners, owners, buildTestOwners);
+  }
+   
   xml.ele('Execution', {id: testDefinition.executionId}, null);
   xml.ele('TestMethod')
     .att('codeBase', testDefinition.methodCodeBase)
@@ -112,6 +117,11 @@ function buildTestEntry(parent, testEntry) {
     .att('testId', testEntry.testId)
     .att('executionId', testEntry.executionId)
     .att('testListId', testEntry.testListId);
+}
+
+function buildTestOwners(parent, owner) {
+  var xml = parent.ele('Owner', owner)
+    .att('name', owner.name);
 }
 
 function buildTestResult(parent, result) {

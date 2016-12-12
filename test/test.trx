@@ -10,6 +10,9 @@
   <TestDefinitions>
     <UnitTest id="89f81c68-a210-4e28-90ed-32d6f10d23f8" name="test 1">
       <Description>This is test 1</Description>
+      <Owners>
+        <Owner name="testOwner"/>
+      </Owners>
       <Execution id="d8d6b688-c5e2-44c4-9c5c-a189875bd610"/>
       <TestMethod codeBase="testing-framework" className="test1" name="test1"/>
     </UnitTest>

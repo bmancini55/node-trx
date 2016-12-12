@@ -33,6 +33,7 @@ describe('formatter', function () {
             methodName: 'test1',
             methodCodeBase: 'testing-framework',
             methodClassName: 'test1',
+            owners: [{name: 'testOwner'}],
             description: 'This is test 1'
           }),
           computerName: 'bmanci01',
@@ -133,7 +134,6 @@ describe('formatter', function () {
 
       actual = formatter.testRun(run);
       expected = fs.readFileSync('test/test.trx', 'ascii');
-      
       assert.equal(expected, actual);
     });
   });

@@ -22,6 +22,7 @@ run = new TestRun({
       methodName: 'test1',
       methodCodeBase: 'testing-framework',
       methodClassName: 'test1',
+      owners: [{name: 'testOwner1'}, {name: 'testOwner2'}],
       description: 'This is test 1'
     }),
     computerName: computerName,

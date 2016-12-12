@@ -233,7 +233,6 @@ function Deployment(params) {
   this.enabled = params.enabled
 }
 
-
 /**
  * A TestList as defined by the XSD type `TestListType`
  *
@@ -245,6 +244,18 @@ function TestList(params) {
   this.id = params.id || uuid.v4();
   this.name = params.name;
 }
+
+
+/**
+ * An Owner as defined by the XSD type `OwnerType`
+ *
+ * @param {object} params
+ * @config {string} name - name of the owner
+ */
+function Owner(params) {
+  this.name = params.name;
+}
+
 
 /**
  * System list for 'Results Not in a List'
@@ -266,6 +277,7 @@ TestList.AllLoadedResults = new TestList({id: '19431567-8539-422a-85d7-44ee4e166
  * @config {string} methodCodeBase
  * @config {string} methodClassName
  * @config {string} [id]
+ * @config {Owner[]} owners
  */
 function UnitTest(params) {
   this.id = params.id || uuid.v4();
@@ -274,6 +286,7 @@ function UnitTest(params) {
   this.methodName = params.methodName;
   this.methodCodeBase = params.methodCodeBase;
   this.methodClassName = params.methodClassName;
+  this.owners = params.owners;
   this.description = params.description;
 }
 
