@@ -12,7 +12,7 @@
   "license": "MIT",
   "repository": "https://github.com/bmancini55/node-trx.git",
   "dependencies": {
-    "node-uuid": "^1.4.7",
+    "uuid": "^3.0.0",
     "xmlbuilder": "^2.6.5"
   },
   "devDependencies": {
