@@ -1,6 +1,10 @@
 node-trx
 ========
 
+[![Build Status][travis-image]][travis-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
+
+
 This is a Node utility for generating test results files in the [Visual Studio Test Results File (TRX)](https://msdn.microsoft.com/en-us/library/jj155800(v=vs.120).aspx) format.
 
 The TRX file format is compliant with the namespace http://microsoft.com/schemas/VisualStudio/TeamTest/2010, found in full spec in `%VSINSTALLDIR%\xml\Schemas\vstst.xsd`.
@@ -34,6 +38,7 @@ run = new TestRun({
       methodName: 'test1',
       methodCodeBase: 'testing-framework',
       methodClassName: 'test1',
+      owners: [{name: 'testOwner'}],
       description: 'This is test 1'
     }),
     computerName: computerName,
@@ -92,6 +97,8 @@ Run `npm run test`.
 
 ### Releases
 
+0.8.0 - Added support for Owners, update UUID to 3.0.0
+
 0.7.0 - Added support for Attachments
 
 0.6.0 - Added support for NotExecuted outcome.
@@ -107,3 +114,9 @@ Run `npm run test`.
 0.1.2 - Added support for errors and stacktrace info
 
 0.1.1 - Initial development release
+
+
+[travis-image]: https://travis-ci.org/bmancini55/node-trx.svg?branch=master
+[travis-url]: https://travis-ci.org/bmancini55/node-trx
+[coveralls-image]: https://coveralls.io/repos/github/bmancini55/node-trx/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/bmancini55/node-trx?branch=master
