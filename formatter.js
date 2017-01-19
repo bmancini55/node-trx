@@ -86,7 +86,7 @@ function buildDeployment(parent, deploymentDefinition) {
 }
 
 function buildTestDefinition(parent, testDefinition) {
-  xml = parent.ele('UnitTest')
+  var xml = parent.ele('UnitTest')
     .att('id', testDefinition.id)
     .att('name', testDefinition.name);
 
