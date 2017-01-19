@@ -26,3 +26,9 @@ node_modules
 
 # Webstorm file
 .idea
+
+# Ignore coverage
+coverage
+
+
+.DS_Store
