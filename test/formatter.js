@@ -131,7 +131,7 @@ describe('formatter', function () {
           startTime: '2010-11-16T08:48:29.9072393-08:00',
           endTime: '2010-11-16T08:48:29.9072393-08:00'
         });
-
+      run.resultFiles = [{ path: 'screenshot.jpg' }];
       actual = formatter.testRun(run);
       expected = fs.readFileSync('test/test.trx', 'ascii');
 
