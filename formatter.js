@@ -57,8 +57,8 @@ exports.testRun = function (testRun) {
     .att('pending', testRun.counters.pending);
 
 
-  if(result.resultFiles && result.resultFiles.length > 0) {
-    buildArray(result.resultFiles, el.ele('ResultFiles'), buildResultFileEntry);
+  if(testRun.resultFiles && testRun.resultFiles.length > 0) {
+    buildArray(testRun.resultFiles, el.ele('ResultFiles'), buildResultFileEntry);
   }
 
   el = xml.ele('TestDefinitions');
