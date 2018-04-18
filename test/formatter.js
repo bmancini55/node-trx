@@ -133,6 +133,7 @@ describe('formatter', function () {
         });
       run.resultFiles = [{ path: 'screenshot.jpg' }];
       actual = formatter.testRun(run);
+      console.log(actual);
       expected = fs.readFileSync('test/test.trx', 'ascii');
 
       assert.equal(expected, actual);
