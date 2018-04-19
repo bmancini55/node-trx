@@ -136,6 +136,7 @@ describe('formatter', function () {
       console.log(actual);
       expected = fs.readFileSync('test/test.trx', 'ascii');
 
+      console.log(expected);
       assert.equal(expected, actual);
     });
   });
