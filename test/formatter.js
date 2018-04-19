@@ -132,13 +132,8 @@ describe('formatter', function () {
           endTime: '2010-11-16T08:48:29.9072393-08:00'
         });
       run.resultFiles = [{ path: 'screenshot.jpg' }];
-      actual = formatter.testRun(run);
-      console.log(actual);
-      console.log(actual.length)
-      expected = fs.readFileSync('test/test.trx', 'ascii');
-
-      console.log(expected);
-      console.log(expected.length)
+      actual = formatter.testRun(run).trim();
+      expected = fs.readFileSync('test/test.trx', 'ascii').trim();
       assert.equal(expected, actual);
     });
   });
