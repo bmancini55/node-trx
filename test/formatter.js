@@ -134,9 +134,11 @@ describe('formatter', function () {
       run.resultFiles = [{ path: 'screenshot.jpg' }];
       actual = formatter.testRun(run);
       console.log(actual);
+      console.log(actual.length)
       expected = fs.readFileSync('test/test.trx', 'ascii');
 
       console.log(expected);
+      console.log(expected.length)
       assert.equal(expected, actual);
     });
   });
