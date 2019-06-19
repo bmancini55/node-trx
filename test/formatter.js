@@ -76,8 +76,8 @@ describe('formatter', function () {
           output: 'This is sample output for the unit test',
           errorMessage: 'This unit test failed for a bad reason',
           errorStacktrace: 'at test3() in c:\\tests\\test3.js:line 1',
-          resultFiles: [ 
-            { path: 'screenshot.jpg' } 
+          resultFiles: [
+            { path: 'screenshot.jpg' }
           ]
         })
         .addResult({
@@ -133,7 +133,7 @@ describe('formatter', function () {
         });
 
       actual = formatter.testRun(run);
-      expected = fs.readFileSync('test/test.trx', 'ascii');
+      expected = fs.readFileSync('test/test.trx', 'ascii').replace(/\r?\n/g, "\n");
 
       assert.equal(expected, actual);
     });
