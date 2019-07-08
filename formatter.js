@@ -36,8 +36,8 @@ exports.testRun = function (testRun) {
   }
 
   // TODO: add Output > StdOut tags in result summary
-  el = xml.ele('ResultSummary')
-    .att('outcome', testRun.counters.failed > 0 ? 'Failed' : 'Completed')
+  el = xml.ele('ResultSummary');
+  el.att('outcome', testRun.counters.failed > 0 ? 'Failed' : 'Completed')
     .ele('Counters')
     .att('total', testRun.counters.total)
     .att('executed', testRun.counters.executed)
@@ -55,6 +55,11 @@ exports.testRun = function (testRun) {
     .att('completed', testRun.counters.completed)
     .att('inProgress', testRun.counters.inProgress)
     .att('pending', testRun.counters.pending);
+
+
+  if(testRun.resultFiles && testRun.resultFiles.length > 0) {
+    buildArray(testRun.resultFiles, el.ele('ResultFiles'), buildResultFileEntry);
+  }
 
   el = xml.ele('TestDefinitions');
   buildArray(testRun.testDefinitions, el, buildTestDefinition);

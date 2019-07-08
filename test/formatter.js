@@ -131,10 +131,9 @@ describe('formatter', function () {
           startTime: '2010-11-16T08:48:29.9072393-08:00',
           endTime: '2010-11-16T08:48:29.9072393-08:00'
         });
-
-      actual = formatter.testRun(run);
-      expected = fs.readFileSync('test/test.trx', 'ascii').replace(/\r?\n/g, "\n");
-
+      run.resultFiles = [{ path: 'screenshot.jpg' }];
+      actual = formatter.testRun(run).replace(/\r?\n/g, "\n").trim();
+      expected = fs.readFileSync('test/test.trx', 'ascii').replace(/\r?\n/g, "\n").trim();
       assert.equal(expected, actual);
     });
   });
