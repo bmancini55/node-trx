@@ -79,7 +79,7 @@ function buildArray(items, element, builder) {
 
 function buildDeployment(parent, deploymentDefinition) {
   var ele = parent.ele('Deployment');
-  
+
   if(deploymentDefinition.runDeploymentRoot !== undefined) {
     ele.att('runDeploymentRoot', deploymentDefinition.runDeploymentRoot);
   }
@@ -98,8 +98,8 @@ function buildTestDefinition(parent, testDefinition) {
     var owners = xml.ele('Owners');
     buildArray(testDefinition.owners, owners, buildTestOwners);
   }
-   
-  xml.ele('Execution', {id: testDefinition.executionId}, null);
+
+  xml.ele('Execution', { id: testDefinition.executionId });
   xml.ele('TestMethod')
     .att('codeBase', testDefinition.methodCodeBase)
     .att('className', testDefinition.methodClassName)
@@ -152,7 +152,7 @@ function buildTestResult(parent, result) {
     xml.att('executionId', result.executionId);
   }
 
-  if (result.relativeResultsDirectory) { 
+  if (result.relativeResultsDirectory) {
     xml.att('relativeResultsDirectory', result.relativeResultsDirectory);
   }
 
