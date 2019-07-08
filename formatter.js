@@ -36,8 +36,8 @@ exports.testRun = function (testRun) {
   }
 
   // TODO: add Output > StdOut tags in result summary
-  el = xml.ele('ResultSummary');
-  el.att('outcome', testRun.counters.failed > 0 ? 'Failed' : 'Completed')
+  el = xml.ele('ResultSummary')
+    .att('outcome', testRun.counters.failed > 0 ? 'Failed' : 'Completed')
     .ele('Counters')
     .att('total', testRun.counters.total)
     .att('executed', testRun.counters.executed)
