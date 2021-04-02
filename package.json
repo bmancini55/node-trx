@@ -12,12 +12,12 @@
   "license": "MIT",
   "repository": "https://github.com/bmancini55/node-trx.git",
   "dependencies": {
-    "uuid": "^3.3.2",
+    "uuid": "^3.4.0",
     "xmlbuilder": "^13.0.2"
   },
   "devDependencies": {
-    "nyc": "^14.1.1",
-    "mocha": "^6.1.4"
+    "mocha": "^6.2.3",
+    "nyc": "^14.1.1"
   },
   "scripts": {
     "test": "nyc mocha"
